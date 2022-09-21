@@ -1,0 +1,30 @@
+@import '../../assets/scss/variables';
+
+section {
+    padding: 3rem 0;
+    text-align: center;
+
+    h1 {
+        color: $white;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    &.light {
+        background: $white;
+
+        h1 {
+            color: lighten($black, 25%);
+        }
+
+        p {
+            color: lighten($black, 25%);
+        }
+    }
+}

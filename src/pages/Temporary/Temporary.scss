@@ -1,0 +1,53 @@
+@import '../../assets/scss/variables';
+
+.component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    height: 100vh;
+
+    @media (max-width: 768px) {
+        height: 90vh;
+    }
+
+    .logo {
+        width: 450px;
+        margin: 0 auto;
+
+        @media (max-width: 768px) {
+            width: 270px;
+        }
+    }
+
+    .icons {
+        margin-top: 3.4rem;
+        display: flex;
+        justify-content: center;
+
+        .icon {
+            width: 40px;
+            margin: 0 10px;
+
+            @media (max-width: 768px) {
+                width: 30px;
+                margin: 0 5px;
+            }
+        }
+    }
+
+    .building {
+        margin-top: 3.4rem;
+        
+        p {
+            color: darken($white, 30%);
+            margin: 0;
+            font-size: 1.1rem;
+            text-align: center;
+
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
