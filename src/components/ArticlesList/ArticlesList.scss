@@ -1,0 +1,24 @@
+
+.articles-list {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-left: -15px;
+    margin-right: -15px;
+    
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
+
+    >div {
+        flex-basis: calc(100% / 3);
+        margin-left: 15px;
+        margin-right: 15px;
+        align-self: stretch;
+
+        @media (max-width: 768px) {
+            flex-basis: 100%;
+            margin-bottom: 15px;
+        }
+    }
+}

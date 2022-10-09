@@ -1,37 +1,54 @@
 import { useEffect, useState } from 'react';
 import Pages from '../../services/pages.service';
+import Articles from '../../services/articles.service';
+import ArticlesList from '../ArticlesList/ArticlesList';
 import './Section.scss';
 
-const itemSetup = {picture: {lg: ''}};
+const itemSetup = {picture: {lg: ''}, media: []};
 
-const Section = ({ slug, theme = 'dark' }) => {
+const Section = ({ slug, theme = 'dark', align = 'left', segmentId = null, children = null }) => {
 
 	const [page, setPage] = useState(itemSetup);
+	const [articles, setArticles] = useState([]);
 
 	useEffect(() => {
 		Pages.getOne(slug).then(
 			response => {
-				if(response.item !== undefined){
+				if(response.item !== undefined) {
 					setPage(response.item);
 				}
 			}
 		);
+		if(segmentId !== null){
+			Articles.getByCategory(segmentId).then(
+				response => {
+					console.log(response);
+					setArticles(response.items);
+				}
+			);
+		}
 	}, []);
 
 	return (
 		<section className={theme} id={ slug }>
-			<div className="container">
-				<h1>{ page.title }</h1>
-				<div className="row">
-					{ page.picture.lg !== "" ? 
+			<div className={`container text-${align}`}>
+				<div className="content">
+					{ page.media.length !== 0 ? 
 						(
-							<div className="col-12 col-md-4 order-last">
+							<figure className={ `image` }>
 								<img src={ page.picture.lg } className="img-fluid" />
-							</div>
+							</figure>
 						)
 						: ''
 					}
-					{ page.content }
+					<h1>{ page.title }</h1>
+					<div className="content-body" dangerouslySetInnerHTML={{ __html: page.content }}></div>
+					{
+						articles.length !== 0 
+						? (<ArticlesList articles={articles} />)
+						: ''
+					}
+					{ children }
 				</div>
 			</div>
 		</section>

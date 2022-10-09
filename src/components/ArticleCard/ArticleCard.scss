@@ -1,0 +1,42 @@
+ @import '../../assets/scss/variables';
+
+.article {
+    background: darken($white, 10%);
+    text-align: left;
+
+    figure {
+        display: block;
+        overflow: hidden;
+
+        img {
+            transition: all 700ms ease;
+        }
+    }
+
+    div {
+        padding: 0 1.5rem 1rem;
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: lighten($black, 10%);
+        }
+    
+        p {
+            font-size: 1.1rem;
+            color: lighten($black, 20%);
+        }
+    }
+
+    &:hover {
+        background: $white;
+            
+        figure {
+
+            img {
+                filter: hue-rotate(30);
+                transform: rotateZ(-2deg) scale(106%);
+            }
+        }
+    }
+}

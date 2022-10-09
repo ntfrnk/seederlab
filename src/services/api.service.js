@@ -11,8 +11,9 @@ export const api = {
         return newdata;
     },
 
-    get: (connectData) => {
+    get: (connectData, showData = false) => {
         const apiData = api.setApiData(connectData);
+        if(showData) console.log({...apiData, call: apiData.url + apiData.endpoint });
         return new Promise((resolve, reject) => {
             axios.get(apiData.url + apiData.endpoint, {
                 headers: {
