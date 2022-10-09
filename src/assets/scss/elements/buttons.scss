@@ -1,0 +1,14 @@
+
+.button {
+    display: inline-block;
+    padding: .4rem 1rem .5rem;
+    background: $dark;
+    color: $white !important;
+    text-decoration: none;
+    position: relative;
+    border-left: solid 10px $green;
+
+    &:hover {
+        background: lighten($dark, 15%);
+    }
+}
