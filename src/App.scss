@@ -3,5 +3,8 @@
 
 @import './assets/scss/variables';
 @import './assets/scss/general';
+@import './assets/scss/elements';
 @import './assets/scss/helpers';
 @import './assets/scss/responsive';
+@import './src/components/ArticlesList/ArticlesList';
+@import './src/components/ArticleCard/ArticleCard';
