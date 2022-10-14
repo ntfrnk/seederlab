@@ -1,0 +1,17 @@
+
+.former {
+    border-radius: 0px;
+    border-width: 0;
+    border-color: lighten($black, 85%);
+    border-bottom-width: 3px;
+    outline: none !important;
+    box-shadow: none !important;
+
+    &:focus {
+        border-color: lighten($black, 65%);
+    }
+
+    &::placeholder {
+        color: lighten($black, 75%);
+    }
+}

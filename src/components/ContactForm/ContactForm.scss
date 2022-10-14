@@ -1,0 +1,19 @@
+@import '../../assets/scss/variables';
+
+.contact-form {
+    background: darken($white, 5%);
+    padding: 2rem;
+    text-align: left;
+
+    .form-group {
+
+        label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: lighten($black, 45%);
+            display: block;
+            margin-bottom: .2rem;
+        }
+    }
+}

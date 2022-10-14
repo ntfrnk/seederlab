@@ -22,7 +22,6 @@ const Section = ({ slug, theme = 'dark', align = 'left', segmentId = null, child
 		if(segmentId !== null){
 			Articles.getByCategory(segmentId).then(
 				response => {
-					console.log(response);
 					setArticles(response.items);
 				}
 			);

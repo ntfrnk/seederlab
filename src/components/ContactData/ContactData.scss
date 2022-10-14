@@ -1,0 +1,14 @@
+@import '../../assets/scss/variables';
+
+.contact-data {
+
+    p {
+        border-left: solid 5px darken($white, 10%);
+        padding-left: 1rem;
+
+        span {
+            display: block;
+            font-weight: bold;
+        }
+    }
+}

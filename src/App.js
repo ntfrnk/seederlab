@@ -4,7 +4,7 @@ import Router from './pages/Router';
 import Data from './services/data.service';
 import Header from './layout/Header/Header';
 import Footer from './layout/Footer/Footer';
-import Loader from './components/Loader/Loader';
+//import Loader from './components/Loader/Loader';
 import './App.scss';
 
 function App() {
